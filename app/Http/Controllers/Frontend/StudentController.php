@@ -54,6 +54,7 @@ class StudentController extends Controller
         $editStudent = Student::find($id);
 
         if (!is_null($editStudent)) {
+            $editStudent = Student::where('id', $editStudent->id)->first();
             return view('frontend.student_pages.edit', compact('editStudent'));
         }
     }

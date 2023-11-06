@@ -11,6 +11,8 @@ use App\Http\Controllers\Frontend\StudentController;
 |--------------------------------------------------------------------------
 */
 
+Route::get('/', [PagesController::class, 'index'])->name('homepage');
+
 Route::group(['prefix'=>'/student'], function() {
     Route::get('/manage', [StudentController::class, 'index'])->name('student.manage');
     Route::get('/managetrash', [StudentController::class, 'managetrash'])->name('student.managetrash');
